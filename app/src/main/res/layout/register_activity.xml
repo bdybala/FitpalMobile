@@ -52,10 +52,6 @@
         android:inputType="number"
         android:hint="Mass (kg)" />
 
-    <CalendarView
-        android:id="@+id/register_birthday"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <Button
         android:text="submit"

@@ -1,11 +1,10 @@
 package bdyb.fitpalmobile.activity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.EditText;
 
 import java.util.Date;
@@ -29,9 +28,10 @@ public class RegisterActivity extends Activity {
         String password = ((EditText)this.findViewById(R.id.register_password)).getText().toString();
         Integer height = Integer.parseInt(((EditText)this.findViewById(R.id.register_height)).getText().toString());
         Integer mass = Integer.parseInt(((EditText)this.findViewById(R.id.register_mass)).getText().toString());
-        Date birthday = new Date(((CalendarView)this.findViewById(R.id.register_birthday)).getDate());
+//        DatePicker birthdayPicker = ((DatePicker)this.findViewById(R.id.register_birthday));
+//        Date birthday = new Date(birthdayPicker.getYear(), birthdayPicker.getMonth(), birthdayPicker.getDayOfMonth());
 
-        NewUserDto newUserDto = new NewUserDto(login, password, firstName, surname, height, mass, birthday);
+        NewUserDto newUserDto = new NewUserDto(login, password, firstName, surname, height, mass, null);
 
         Log.d("TTT", "SUBMIt!!: " + newUserDto);
     }
