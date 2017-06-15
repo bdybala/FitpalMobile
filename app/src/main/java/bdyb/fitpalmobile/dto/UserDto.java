@@ -12,7 +12,7 @@ public class UserDto {
     private String password;
     private String firstName;
     private String surname;
-    private Date birthday;
+    private Long birthday;
     private Gender gender;
     private Double mass;
     private Double height;
@@ -21,4 +21,22 @@ public class UserDto {
     private Double desiredIntervalToLoseWeight;
 
     private Role role;
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", birthday=" + birthday +
+                ", gender=" + gender +
+                ", mass=" + mass +
+                ", height=" + height +
+                ", massToLoseWeight=" + massToLoseWeight +
+                ", desiredIntervalToLoseWeight=" + desiredIntervalToLoseWeight +
+                ", role=" + role +
+                '}';
+    }
 }
