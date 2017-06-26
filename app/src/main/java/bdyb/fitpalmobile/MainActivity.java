@@ -8,6 +8,7 @@ import android.view.View;
 
 import bdyb.fitpalmobile.activity.LoginActivity;
 import bdyb.fitpalmobile.activity.RegisterActivity;
+import bdyb.fitpalmobile.session.SaveSharedPreferences;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +16,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (SaveSharedPreferences.getUserName(MainActivity.this).length() == 0) {
+            // need to log in!!
+        } else {
+            // already logged in!!
+        }
     }
 
     void handleSignIn(View view) {

@@ -13,6 +13,7 @@ import bdyb.fitpalmobile.R;
 import bdyb.fitpalmobile.dto.LoginDto;
 import bdyb.fitpalmobile.dto.UserDto;
 import bdyb.fitpalmobile.service.RestService;
+import bdyb.fitpalmobile.session.SaveSharedPreferences;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,7 +39,7 @@ public class LoginActivity extends Activity {
         authUser(login.getText().toString(), password.getText().toString());
     }
 
-    private void authUser(String login, String password) {
+    private void authUser(final String login, String password) {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         Retrofit.Builder builder = new Retrofit.
                 Builder()
@@ -64,6 +65,8 @@ public class LoginActivity extends Activity {
                 } else if (response.body().toString().equals("true")) {
                     Toast.makeText(LoginActivity.this, "Success! : " + response.body().toString(),
                             Toast.LENGTH_LONG).show();
+                    SaveSharedPreferences.setUserName(LoginActivity.this, login);
+                    //redirect to new view
                 } else {
                     Toast.makeText(LoginActivity.this, "Failure! : " + response.body().toString(),
                             Toast.LENGTH_LONG).show();

@@ -1,6 +1,5 @@
 package bdyb.fitpalmobile.dto;
 
-import java.util.Date;
 
 import bdyb.fitpalmobile.enums.Gender;
 import bdyb.fitpalmobile.enums.Role;
