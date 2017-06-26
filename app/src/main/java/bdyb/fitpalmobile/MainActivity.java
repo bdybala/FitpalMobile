@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import bdyb.fitpalmobile.activity.KcalActivity;
 import bdyb.fitpalmobile.activity.LoginActivity;
 import bdyb.fitpalmobile.activity.RegisterActivity;
 import bdyb.fitpalmobile.session.SaveSharedPreferences;
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
             // need to log in!!
         } else {
             // already logged in!!
+            Intent kcalIntent = new Intent(MainActivity.this, KcalActivity.class);
+            MainActivity.this.startActivity(kcalIntent);
         }
     }
 

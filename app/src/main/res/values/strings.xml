@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FitpalMobile</string>
+    <string name="radio_low">Low activity</string>
+    <string name="radio_medium">Medium activity</string>
+    <string name="radio_high">High acitivity</string>
+    <string name="kcal_display">Calculate</string>
 </resources>

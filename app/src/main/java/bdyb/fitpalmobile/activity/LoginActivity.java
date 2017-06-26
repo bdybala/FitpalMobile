@@ -1,6 +1,7 @@
 package bdyb.fitpalmobile.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import bdyb.fitpalmobile.MainActivity;
 import bdyb.fitpalmobile.R;
 import bdyb.fitpalmobile.dto.LoginDto;
 import bdyb.fitpalmobile.dto.UserDto;
@@ -67,6 +69,8 @@ public class LoginActivity extends Activity {
                             Toast.LENGTH_LONG).show();
                     SaveSharedPreferences.setUserName(LoginActivity.this, login);
                     //redirect to new view
+                    Intent kcalIntent = new Intent(LoginActivity.this, KcalActivity.class);
+                    LoginActivity.this.startActivity(kcalIntent);
                 } else {
                     Toast.makeText(LoginActivity.this, "Failure! : " + response.body().toString(),
                             Toast.LENGTH_LONG).show();

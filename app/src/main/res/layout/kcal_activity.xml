@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="122dp"
+        android:id="@+id/radioGroup2">
+        <RadioButton
+            android:id="@+id/kcal_radioLow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_low"/>
+        <RadioButton
+            android:id="@+id/kcal_radioMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_medium"/>
+        <RadioButton
+            android:id="@+id/kcal_radioHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_high"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/kcal_btnDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kcal_display"
+        android:onClick="handleDisplayButton"
+        android:layout_below="@+id/radioGroup2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
+
+</RelativeLayout>
