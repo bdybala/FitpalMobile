@@ -46,10 +46,9 @@ public class LoginActivity extends Activity {
                 .addConverterFactory(
                         GsonConverterFactory.create()
                 );
-        Retrofit retrofit =
-                builder
-                        .client(httpClient.build())
-                        .build();
+        Retrofit retrofit = builder
+                .client(httpClient.build())
+                .build();
         RestService service = retrofit.create(RestService.class);
 
         Call<Boolean> call = service.authUser(new LoginDto(login, password));
@@ -61,16 +60,14 @@ public class LoginActivity extends Activity {
                 if (!response.isSuccessful()) {
                     Toast.makeText(LoginActivity.this, "Failure!! : ",
                             Toast.LENGTH_LONG).show();
-                    return ;
-                }
-                else if (response.body().toString().equals("true")) {
+                    return;
+                } else if (response.body().toString().equals("true")) {
                     Toast.makeText(LoginActivity.this, "Success! : " + response.body().toString(),
                             Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(LoginActivity.this, "Failure! : " + response.body().toString(),
                             Toast.LENGTH_LONG).show();
                 }
-
 
             }
 
@@ -85,10 +82,10 @@ public class LoginActivity extends Activity {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         Retrofit.Builder builder = new Retrofit.
                 Builder()
-                        .baseUrl(API_BASE_URL)
-                        .addConverterFactory(
-                                GsonConverterFactory.create()
-                        );
+                .baseUrl(API_BASE_URL)
+                .addConverterFactory(
+                        GsonConverterFactory.create()
+                );
         Retrofit retrofit =
                 builder
                         .client(httpClient.build())
