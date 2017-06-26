@@ -3,6 +3,7 @@ package bdyb.fitpalmobile.service;
 import java.util.List;
 
 import bdyb.fitpalmobile.dto.LoginDto;
+import bdyb.fitpalmobile.dto.NewUserDto;
 import bdyb.fitpalmobile.dto.UserDto;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -16,4 +17,7 @@ public interface RestService {
 
     @POST("/api/users/authenticate")
     Call<Boolean> authUser(@Body LoginDto loginDto);
+
+    @POST("/api/users")
+    Call<UserDto> addUser(@Body NewUserDto newUserDto);
 }

@@ -20,9 +20,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LoginActivity extends Activity {
+import static bdyb.fitpalmobile.config.Constants.API_BASE_URL;
 
-    private static final String API_BASE_URL = "http://93.180.188.108:8080";
+public class LoginActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,7 +1,5 @@
 package bdyb.fitpalmobile.dto;
 
-import java.util.Date;
-
 public class NewUserDto {
 
     private String login;
@@ -10,9 +8,9 @@ public class NewUserDto {
     private String lastName;
     private Integer height;
     private Integer mass;
-    private Date birthday;
+    private Long birthday;
 
-    public NewUserDto(String login, String password, String firstName, String lastName, Integer height, Integer mass, Date birthday) {
+    public NewUserDto(String login, String password, String firstName, String lastName, Integer height, Integer mass, Long birthday) {
         this.login = login;
         this.password = password;
         this.firstName = firstName;
@@ -86,11 +84,11 @@ public class NewUserDto {
         this.mass = mass;
     }
 
-    public Date getBirthday() {
+    public Long getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(Long birthday) {
         this.birthday = birthday;
     }
 }
