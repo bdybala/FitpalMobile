@@ -69,6 +69,8 @@ public class KcalActivity extends Activity {
 
         // send retrofit POST with inputData
 
+        sendDataForCalculations(inputDataDto);
+
 
 
     }
@@ -101,7 +103,7 @@ public class KcalActivity extends Activity {
                     Toast.makeText(KcalActivity.this, "Failure!! : ",
                             Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(KcalActivity.this, "Success! : " + response.body(),
+                    Toast.makeText(KcalActivity.this, "Chuj ci w dupe! : " + response.body(),
                             Toast.LENGTH_LONG).show();
                     userDto.setId(response.body().getId());
                     userDto.setLogin(response.body().getLogin());
@@ -121,6 +123,41 @@ public class KcalActivity extends Activity {
 
             }
         });
-        return null;
+        return userDto;
     }
+
+
+    private void sendDataForCalculations(InputDataDto inputDataDto) {
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        Retrofit.Builder builder = new Retrofit.
+                Builder()
+                .baseUrl(API_BASE_URL)
+                .addConverterFactory(
+                        GsonConverterFactory.create()
+                );
+        Retrofit retrofit = builder
+                .client(httpClient.build())
+                .build();
+        RestService service = retrofit.create(RestService.class);
+
+        Call<Integer> callKcalCalculate = service.calculateKcal(inputDataDto);
+        callKcalCalculate.enqueue(new Callback<Integer>() {
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(KcalActivity.this, "Failure!! : ",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(KcalActivity.this, "Success! : " + response.body(),
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+
+            }
+        });
+    }
+
 }
