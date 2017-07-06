@@ -1,9 +1,5 @@
 package bdyb.fitpalmobile.dto;
 
-/**
- * Created by BDyb on 2017-06-15.
- */
-
 public class LoginDto {
 
     private String login;

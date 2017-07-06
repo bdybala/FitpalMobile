@@ -23,10 +23,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static bdyb.fitpalmobile.config.Constants.API_BASE_URL;
 
-/**
- * Created by BDyb on 2017-06-27.
- */
-
 public class KcalActivity extends Activity {
 
     @Override

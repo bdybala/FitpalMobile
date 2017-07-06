@@ -3,10 +3,6 @@ package bdyb.fitpalmobile.dto;
 import bdyb.fitpalmobile.enums.Gender;
 import bdyb.fitpalmobile.enums.PhysicalActivity;
 
-/**
- * Created by BDyb on 2017-06-27.
- */
-
 public class InputDataDto {
 
     private Double mass;
