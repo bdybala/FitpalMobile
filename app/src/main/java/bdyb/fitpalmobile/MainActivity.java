@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import bdyb.fitpalmobile.activity.KcalActivity;
 import bdyb.fitpalmobile.activity.LoginActivity;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
             // already logged in!!
             Intent kcalIntent = new Intent(MainActivity.this, KcalActivity.class);
             MainActivity.this.startActivity(kcalIntent);
+            Toast.makeText(MainActivity.this, "Already logged in as " + SaveSharedPreferences.getUserName(MainActivity.this),
+                    Toast.LENGTH_LONG).show();
         }
     }
 

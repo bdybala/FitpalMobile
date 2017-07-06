@@ -13,6 +13,7 @@ public class UserDto {
     private String surname;
     private Long birthday;
     private Gender gender;
+
     private Double mass;
     private Double height;
 
@@ -37,5 +38,78 @@ public class UserDto {
                 ", desiredIntervalToLoseWeight=" + desiredIntervalToLoseWeight +
                 ", role=" + role +
                 '}';
+    }
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getLogin() {
+        return login;
+    }
+    public void setLogin(String login) {
+        this.login = login;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    public String getSurname() {
+        return surname;
+    }
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+    public Long getBirthday() {
+        return birthday;
+    }
+    public void setBirthday(Long birthday) {
+        this.birthday = birthday;
+    }
+    public Gender getGender() {
+        return gender;
+    }
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+    public Double getMass() {
+        return mass;
+    }
+    public void setMass(Double mass) {
+        this.mass = mass;
+    }
+    public Double getHeight() {
+        return height;
+    }
+    public void setHeight(Double height) {
+        this.height = height;
+    }
+    public Double getMassToLoseWeight() {
+        return massToLoseWeight;
+    }
+    public void setMassToLoseWeight(Double massToLoseWeight) {
+        this.massToLoseWeight = massToLoseWeight;
+    }
+    public Double getDesiredIntervalToLoseWeight() {
+        return desiredIntervalToLoseWeight;
+    }
+    public void setDesiredIntervalToLoseWeight(Double desiredIntervalToLoseWeight) {
+        this.desiredIntervalToLoseWeight = desiredIntervalToLoseWeight;
+    }
+    public Role getRole() {
+        return role;
+    }
+    public void setRole(Role role) {
+        this.role = role;
     }
 }
